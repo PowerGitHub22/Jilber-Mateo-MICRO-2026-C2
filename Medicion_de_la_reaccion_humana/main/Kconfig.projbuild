@@ -1,0 +1,47 @@
+menu "Configuracion de la aplicacion"
+
+    config APP_WIFI_SSID
+        string "Nombre de la red WiFi (SSID)"
+        default ""
+
+    config APP_WIFI_PASSWORD
+        string "Contrasena de la red WiFi"
+        default ""
+
+    config APP_WIFI_MAXIMUM_RETRY
+        int "Reintentos maximos de conexion WiFi"
+        default 10
+
+    config APP_MQTT_BROKER_URI
+        string "URI del broker MQTT"
+        default "mqtt://broker.hivemq.com:1883"
+
+    config APP_MQTT_TOPIC_STATE
+        string "Topic MQTT para publicar el estado"
+        default "reaccion_humana/estado"
+
+    config APP_MQTT_TOPIC_RESULT
+        string "Topic MQTT para publicar los resultados"
+        default "reaccion_humana/resultado"
+
+    config APP_MQTT_TOPIC_COMMAND
+        string "Topic MQTT para recibir comandos"
+        default "reaccion_humana/comando"
+
+    config APP_DELAY_MIN_MS
+        int "Tiempo minimo aleatorio antes de encender el LED (ms)"
+        default 1000
+
+    config APP_DELAY_MAX_MS
+        int "Tiempo maximo aleatorio antes de encender el LED (ms)"
+        default 5000
+
+    config APP_REACTION_TIMEOUT_MS
+        int "Tiempo maximo para soltar el primer boton (ms)"
+        default 5000
+
+    config APP_MOVEMENT_TIMEOUT_MS
+        int "Tiempo maximo para presionar el segundo boton (ms)"
+        default 5000
+
+endmenu
